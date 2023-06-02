@@ -1,0 +1,124 @@
+<div class="row">
+    <div class="col-lg-9 col-md-6 col-sm-6">
+        <div class="alert alert-info alert-with-icon alert-dismissible fade show" data-notify="container">
+            <span data-notify="icon" class="nc-icon nc-chart-pie-36"></span>
+            <h4>APNEA DEL SUEÑO</h4>
+            <h6>
+              Modelo de clasificación que use los embedding como técnica de vectorización de textos con el fin de predecir la apnea del sueño.
+
+              EL modelo de predicción Apnea, presenta la probabilidad de que un paciente sufra de apnea del sueño por medio de la evaluación de un párrafo de dictamen medico donde se presenta una sintomatología de un paciente.
+              
+              Este recibe como entrada un párrafo en español y presenta como resultado una probabilidad de sufrir Apnea y un dictamen
+
+            </h6>
+          </div>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-6">
+      <div class="card card-stats">
+        <div class="card-body ">
+          <div class="row">
+            <div class="col-5 col-md-4">
+              <div class="icon-big text-center icon-warning">
+                <i class="nc-icon nc-money-coins text-success"></i>
+              </div>
+            </div>
+            <div class="col-7 col-md-8">
+              <div class="numbers">
+                <p class="card-category">Creditos actuales</p>
+                <p class="card-title">$ {{creditU}} 
+                  <p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer ">
+          <hr>
+          <div class="stats">
+            <i class="fa fa-calendar-o"></i> Creditos
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="row">
+    
+    <div class="col-lg-8 col-md-7 col-sm-6">
+      <div class="card card-stats">
+        <div class="card-body ">
+          <div class="row">
+            <div class="col-3 col-md-2">
+              <div class="icon-big text-center icon-warning">
+                <i class="nc-icon nc-money-coins text-success"></i>
+              </div>
+            </div>
+            <div class="col-9 col-md-10">
+              <p class="card-category">Ingrese el texto:</p>
+                  <div class="form-group">
+                    <textarea class="form-control" id="text" rows="4" placeholder="Ingrese el texto a analizar" [(ngModel)]="textapnea"></textarea>
+                  </div>
+                  <div class="row">
+                    <label for="lang">Seleccione el modelo:  </label>
+                    <select name="lenguajes" id="lang" [(ngModel)]="model">
+                      <option value="LR">Modelo de regresion logistica</option>
+                      <!--option value="TR">Modelo Transformers BERT</option-->
+                    </select>
+                  </div>
+                  <div class="row">
+                    <button type="submit" class="btn btn-primary btn-round" (click)="updatetext()">predecir</button>
+                  </div>
+                  <!--Flag variable is used here-->
+                  <div class="container" *ngIf="reloading_graphic == 2 ">
+                      <h3>Cargando ...</h3>
+                      <img src="assets/img/Loading.gif">
+                  </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card card-stats">
+        <div class="card-body ">
+          <div class="row">
+            <div class="col-5 col-md-2">
+              <div class="icon-big text-center icon-warning">
+                <i class="nc-icon nc-globe text-warning"></i>
+              </div>
+            </div>
+            <div class="col-5 col-md-10">
+              <div>
+                <p class="card-category">Ejemplo de texto para usar en la predicción:</p>
+                <p class="text-muted" >{{txt_apnea}}<p>
+              </div>
+              <div class="row">
+                <button type="submit" class="btn btn-primary btn-round" [cdkCopyToClipboard]="txt_apnea" (click)="copytext()">copy</button>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+        <div class="card-footer ">
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-5 col-sm-6">
+      <div class="col-md-12">
+        <div class="card ">
+          <div class="card-header ">
+            <h5 class="card-title">APNEA DEL SUEÑO</h5>
+            <!--p class="card-category">Last Campaign Performance</p-->
+          </div>
+          <div class="card-body ">
+            <div class="divchart">
+              <div class="chart-container">
+                <canvas  id="MyChart_pie" width="200" height="200">{{ chart }}</canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+  

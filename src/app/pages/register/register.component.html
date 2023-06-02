@@ -1,0 +1,158 @@
+<div class="row">
+    <div class="col-md-2">
+    </div>
+    <div class="col-md-8">
+      <div class="col-md-12">
+        <div class="card card-user">
+          <div class="image">
+            <img src="assets/img/encabezado_model.svg" alt="...">
+          </div>
+          <div class="card-body">
+            <div class="author">
+              <a href="#">
+                <img class="avatar border-gray" src="assets/img/caobaweblogo.png" alt="...">
+                <h5 class="title">{{username}}</h5>
+              </a>
+        <div class="card-header">
+          <h5 class="card-title">Register</h5>
+          <h6>Recuerda llenar todos los campos por que son obligatorios para completar tu registro.</h6>
+        </div>
+        <div class="card-body">
+          <form>
+            <div class="row">
+              <div class="col-md-6 pr-1">
+                <div class="form-group">
+                  <label>First Name</label>
+                  <input id="first_name" class = "form-control" type="text" placeholder="first_name" name="texto" [(ngModel)]="first_name" required>
+                </div>
+              </div>
+              <div class="col-md-6 pl-1">
+                <div class="form-group">
+                  <label>Last Name</label>
+                  <input id="last_name" class = "form-control" type="text" placeholder="last_name" name="texto" [(ngModel)]="last_name" required>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <!--div class="col-md-5 pr-1">
+                <div class="form-group">
+                  <label>Company (disabled)</label>
+                  <input type="text" class="form-control" placeholder="Company"  name="texto" [(ngModel)]="company" value="__">
+                </div>
+              </div-->
+              <div class="col-md-3 pr-1">
+                <div class="form-group">
+                  <label>Username</label>
+                  <input id="username" type="text" class="form-control" placeholder="Username"  name="texto" [(ngModel)]="username" required>
+                </div>
+              </div>
+              <div class="col-md-5 px-1">
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Email address</label>
+                  <input id="email" type="email" class="form-control" placeholder="Email" name="texto"  [(ngModel)]="email" required>
+                </div>
+              </div>
+              <div class="col-md-4 pl-1">
+                  <div class="form-group">
+                    <label>born date</label>
+                    <input id="born_date" type="date" class="form-control" placeholder="Fecha de nacimiento"
+                    [(ngModel)]="born_date" name="born_date" required>
+                  </div>
+              </div>
+            </div>
+            <!--div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label>Address</label>
+                  <input type="text" class="form-control" placeholder="Home Address" value="" [(ngModel)]="home_address">
+                </div>
+              </div>
+            </div-->
+            <!--div class="row">
+              <div class="col-md-4 pr-1">
+                <div class="form-group">
+                  <label>City</label>
+                  <input type="text" class="form-control" placeholder="City" value="" [(ngModel)]="city" required>
+                </div>
+              </div>
+              <div class="col-md-4 px-1">
+                <div class="form-group">
+                  <label>Country</label>
+                  <input type="text" class="form-control" placeholder="Country" value="" [(ngModel)]="country" required>
+                </div>
+              </div>
+            </div-->
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label>Cellphone:</label>
+                  <input id="cellphone" type="text" class="form-control" placeholder="Cellphone" [(ngModel)]="cellphone" required>
+                </div>
+              </div>
+            </div>
+            <!--div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label>About Me</label>
+                  <textarea class="form-control textarea" value="__" placeholder="Oh so, your weak rhyme You doubt I'll bother, reading into it"></textarea>
+                </div>
+              </div>
+            </div-->
+            <div class="row">
+              <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Password</label>
+                    <input id="password1" type="password" class="form-control" placeholder="Contraseña" [(ngModel)]="password1"
+                        name="password" required>
+                  </div>
+              </div>
+              <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Password</label>
+                    <input id="password2" type="password" class="form-control" placeholder="Contraseña" [(ngModel)]="password2"
+                        name="password" required>
+                  </div>
+              </div>
+
+            </div>
+
+            <!--div class="form-group">
+              <div [hidden]="captcha">
+                  <p>Completa el captcha para continuar</p>
+                  <re-captcha (resolved)="resolved($event)"
+                      siteKey="6LdJuCAiAAAAAP3kPfk0lJD3wcNPF6GPd2DeQpMM">
+                  </re-captcha>
+              </div>
+
+              <div [hidden]="!captcha">
+                  <input (click)="register()"
+                      type="submit" value="Registro" class="btn float-right login_btn">
+
+              </div>
+
+            </div>
+
+          <div [hidden]="!registerOK">
+              <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                  <strong>Cuenta creada con exito!! <br> </strong>
+                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+          </div-->
+            <div class="row">
+              <div class="update ml-auto mr-auto">
+                <button type="submit" class="btn btn-primary btn-round" (click)="register()">Register</button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="col-md-2">
+    </div>
+  </div>
