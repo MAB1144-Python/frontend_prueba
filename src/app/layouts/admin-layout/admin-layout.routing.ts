@@ -47,7 +47,6 @@ export const AdminLayoutRoutes: Routes = [
   {
     path: "menu",
     component: MenuModelosComponent,
-    canActivate: [Guardian1Guard],
   },
   {
     path: "hate-speech",

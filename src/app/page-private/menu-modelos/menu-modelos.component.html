@@ -6,13 +6,7 @@
       </div>
       <div class="card-body">
         <div class="table-responsive">
-          <table class="table">
-            <!--thead class=" text-primary">
-                <th> Name</th>
-                <th> Country</th>
-                <th> City</th>
-                <th class="text-right">Salary</th>
-              </thead-->
+          <!--table class="table">
             <thead class="text-primary">
               <tr>
                 <th scope="col" abbr="Starter">N</th>
@@ -73,9 +67,9 @@
                   Modelo de clasificación que permite la detección de sintomas
                   de depresión en textos.
                 </td>
-                <!--td >
+                <!-td >
                       <i  class="material-icons"  routerLink="/psicolinguistica"><img src="./assets/img/flecha1.png"  height ="30" width="30" /></i>
-                    </td-->
+                    </td->
               </tr>
               <tr>
                 <td>5</td>
@@ -96,10 +90,10 @@
                   probabilidad de cancelación de tarjeta de crédito y el
                   segmento del valor del cliente.
                 </td>
-                <!--td>
+                <!-td>
                   <i class="material-icons" routerLink="/credit-card"><img src="./assets/img/flecha1.png" height="30"
                       width="30" /></i>
-                </td-->
+                </td->
               </tr>
               <tr>
                 <td>7</td>
@@ -119,9 +113,9 @@
                 <td>Python</td>
                 <td>Modelo de clasificación que predice si un cliente entrará o no en mora de acuerdo con sus
                   características geográficas e ingresos
-                  <!--td >
+                  <!-td >
                       <i  class="material-icons"  routerLink="/geographic_banking"><img src="./assets/img/flecha1.png"  height ="30" width="30" /></i>
-                    </td-->
+                    </td->
               </tr>
               <tr>
                 <td>9</td>
@@ -152,9 +146,9 @@
                   Modelo de predicción de riesgo crediticio para el portafolio
                   de vehículos
                 </td>
-                <!--td >
+                <!-td >
                           <i  class="material-icons"  routerLink="/scoring-credit"><img src="./assets/img/flecha1.png"  height ="30" width="30" /></i>
-                </td-->
+                </td->
               </tr>
 
               <tr>
@@ -165,12 +159,37 @@
                   Modelo de clasificación de imagenes que permite la detección
                   de vehiculos de carga con materiales potencialmente peligrosos
                 </td>
-                <!--td >
+                <!-td >
                           <i  class="material-icons"  routerLink="/identificacion-vehicular"><img src="./assets/img/flecha1.png"  height ="30" width="30" /></i>
-                </td-->
+                </td->
+              </tr>
+            </tbody>
+          </table-->
+          <table class="table table-striped">
+            <thead>
+                <tr>
+                  <th>Item</th>
+                  <th>Estacion</th>
+                  <th>Sentido</th>
+                  <th>Fecha</th>
+                  <th>Categoria</th>
+                  <th>Cantidad</th>
+                </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let dato of res_data.datos_Conteo_Vehiculos ; let indice=index">
+                <td>{{ indice }}</td>
+                <td>{{ dato.estacion }}</td>
+                <td>{{ dato.sentido }}</td>
+                <td>{{ dato.fecha_hora }}</td>
+                <td>{{ dato.categoria }}</td>
+                <td>{{ dato.cantidad }}</td>
               </tr>
             </tbody>
           </table>
+          <div class="row">
+            <button type="submit" class="btn btn-primary btn-round" (click)="updatedata_cv()">predecir</button>
+          </div>
         </div>
       </div>
     </div>
