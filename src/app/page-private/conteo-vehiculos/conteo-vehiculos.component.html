@@ -1,39 +1,202 @@
 <div class="row">
-    <div class="col-md-12">
-      <div class="card">
-        <div class="card-header">
-          <h4 class="card-title">Conteo de vehiculos</h4>
-        </div>
-        <div class="card-body">
-          <div class="table-responsive">
-
-            <table class="table table-striped">
-              <thead>
-                  <tr>
-                    <th>Item</th>
-                    <th>Estacion</th>
-                    <th>Sentido</th>
-                    <th>Fecha</th>
-                    <th>Categoria</th>
-                    <th>Cantidad</th>
-                  </tr>
-              </thead>
-              <tbody>
-                <tr *ngFor="let dato of res_data.datos_Conteo_Vehiculos ; let indice=index">
-                  <td>{{ indice }}</td>
-                  <td>{{ dato.estacion }}</td>
-                  <td>{{ dato.sentido }}</td>
-                  <td>{{ dato.fecha_hora }}</td>
-                  <td>{{ dato.categoria }}</td>
-                  <td>{{ dato.cantidad }}</td>
-                </tr>
-              </tbody>
-            </table>
-            <div class="row">
-              <button type="submit" class="btn btn-primary btn-round" (click)="updatedata_cv()">predecir</button>
-            </div>
+  <div class="col-lg-3 col-md-6 col-sm-6">
+      <div class="card card-stats">
+          <div class="card-body ">
+              <div class="row">
+                  <div class="col-5 col-md-4">
+                      <div class="icon-big text-center icon-warning">
+                          <i class="nc-icon nc-globe text-warning"></i>
+                      </div>
+                  </div>
+                  <div class="col-7 col-md-8">
+                      <div class="row" style="margin: 10%;">
+                          <div class="form-group">
+                              <div class="row">
+                                  <button type="submit" class="btn btn-primary btn-round"
+                                      (click)="updatedata_cv()">Filtrar</button>
+                              </div>
+                              <div class="row">
+                                  <button type="submit" class="btn btn-primary btn-round"
+                                      (click)="updatedata_cv_clear()">Clear</button>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
           </div>
-        </div>
       </div>
-    </div>
   </div>
+  <div class="col-lg-9 col-md-6 col-sm-6">
+      <div class="card card-stats">
+          <div class="card-body ">
+              <div class="row">
+                  <div class="col-4 col-md-4">
+                      <div>
+                          <p class="card-category">Seleccione la estacion </p>
+                          <div class="row" style="margin: 10%;">
+                              <select name="lenguajes" id="lang" [(ngModel)]="sel_estacion">
+                                  <option value='' >   </option>
+                                  <option value={{dato}} *ngFor="let dato of uq_estaciones">{{dato}}</option>
+                                  <!--option value="TR">Modelo Transformers BERT</option-->
+                              </select>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-4 col-md-4">
+                      <div>
+                          <p class="card-category">Seleccione el sentido </p>
+                          <div class="row" style="margin: 10%;">
+                              <select name="lenguajes" id="lang" [(ngModel)]="sel_sentido">
+                                  <option value='' >   </option>
+                                  <option value={{dato}} *ngFor="let dato of uq_sentido">{{dato}}</option>
+                                  <!--option value="TR">Modelo Transformers BERT</option-->
+                              </select>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-4 col-md-4">
+                      <div>
+                          <p class="card-category">Seleccione la categoria </p>
+                          <div class="row" style="margin: 10%;">
+                              <select name="lenguajes" id="lang" [(ngModel)]="sel_categoria">
+                                  <option value='' >   </option>
+                                  <option value={{dato}} *ngFor="let dato of uq_categoria">{{dato}}</option>
+                                  <!--option value="TR">Modelo Transformers BERT</option-->
+                              </select>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-3 col-md-6 col-sm-6">
+      <div class="card card-stats">
+          <div class="card-body ">
+              <div class="row">
+                  <div class="col-5 col-md-4">
+                      <div class="icon-big text-center icon-warning">
+                          <i class="nc-icon nc-globe text-warning"></i>
+                      </div>
+                  </div>
+                  <div class="col-7 col-md-8">
+                      <div class="numbers">
+                          <p class="card-category">Total de registros</p>
+                          <p class="card-title">{{total_registros}}
+                          <p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="card card-stats">
+          <div class="card-body ">
+              <div class="row">
+                  <div class="col-5 col-md-4">
+                      <div class="icon-big text-center icon-warning">
+                          <i class="nc-icon nc-globe text-warning"></i>
+                      </div>
+                  </div>
+                  <div class="col-7 col-md-8">
+                      <div class="numbers">
+                          <p class="card-category">Total de registros con filtro</p>
+                          <p class="card-title">{{filtro_registros}}
+                          <p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="col-lg-9 col-md-6 col-sm-6">
+      <div class="card card-stats">
+          <div class="card-body ">
+              <div class="row">
+                  <div class="col-6 col-md-6">
+                      <div>
+                          <p class="card-category">Seleccione fecha inicial </p>
+                          <div class="row" style="margin: 10%;">
+                              <div class="form-group">
+                                  <input id="fecha_ini" type="date" class="form-control"
+                                      placeholder="Fecha de nacimiento" [(ngModel)]="date_ini" name="born_date"
+                                      required>
+                              </div>
+                          </div>
+                      </div>
+                      <div>
+                          <p class="card-category">Seleccione la hora inicial </p>
+                          <div class="row" style="margin: 10%;">
+                              <div class="form-group">
+                                  <select name="lenguajes" id="lang" [(ngModel)]="hora_ini">
+                                      <option value={{hora}} *ngFor="let hora of horas">{{hora}}</option>
+                                  </select>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-6 col-md-6">
+                      <div>
+                          <p class="card-category">Seleccione fecha inicial </p>
+                          <div class="row" style="margin: 10%;">
+                              <div class="form-group">
+                                  <input id="born_date" type="date" class="form-control"
+                                      placeholder="Fecha de nacimiento" [(ngModel)]="date_fin" name="born_date"
+                                      required>
+                              </div>
+                          </div>
+                      </div>
+                      <div>
+                          <div>
+                              <p class="card-category">Seleccione la hora final </p>
+                              <div class="row" style="margin: 10%;">
+                                  <div class="form-group">
+                                      <select name="lenguajes" id="lang" [(ngModel)]="hora_fin">
+                                          <option value={{hora}} *ngFor="let hora of horas">{{hora}}</option>
+                                      </select>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+      <div class="card">
+          <div class="card-header">
+              <h4 class="card-title">Recaudo de vehiculos</h4>
+          </div>
+          <div class="card-body">
+              <div class="table-responsive">
+                  <table class="table table-striped">
+                      <thead>
+                          <tr>
+                              <th>Item</th>
+                              <th>Estacion</th>
+                              <th>Sentido</th>
+                              <th>Fecha</th>
+                              <th>Categoria</th>
+                              <th>Cantidad</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          <tr *ngFor="let dato of res_data.datos_Recaudo_Vehiculos ; let indice=index">
+                              <td>{{ indice }}</td>
+                              <td>{{ dato.estacion }}</td>
+                              <td>{{ dato.sentido }}</td>
+                              <td>{{ dato.fecha_hora }}</td>
+                              <td>{{ dato.categoria }}</td>
+                              <td>{{ dato.valor_tabulado }}</td>
+                          </tr>
+                      </tbody>
+                  </table>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

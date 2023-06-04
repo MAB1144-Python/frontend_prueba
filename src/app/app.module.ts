@@ -17,7 +17,6 @@ import { RegisterComponent } from './pages/register/register.component';
 import { FormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 import { ClipboardModule } from "@angular/cdk/clipboard";
-import { MenuModelosComponent } from './page-private/menu-modelos/menu-modelos.component';
 import { ImageCropperModule } from "ngx-image-cropper";
 import { AlertAuthenticatorComponent } from './page-private/alert-authenticator/alert-authenticator.component';
 import { AlertErrorComponent } from './page-private/alert-error/alert-error.component';
@@ -29,7 +28,6 @@ import { ConteoVehiculosComponent } from './page-private/conteo-vehiculos/conteo
     AdminLayoutComponent,
     LoginComponent,
     RegisterComponent,
-    MenuModelosComponent,
     AlertAuthenticatorComponent,
     AlertErrorComponent,
     RecaudoVehiculosComponent,

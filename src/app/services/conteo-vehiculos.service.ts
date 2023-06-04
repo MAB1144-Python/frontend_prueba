@@ -21,7 +21,7 @@ export class ConteoVehiculosService {
         'Access-Control-Allow-Origin': '*'
       })
     };
-    return this.http.post<string>(`http://127.0.0.1:8000/datos/Conteo_Vehiculos`+
+    return this.http.post<string>(`http://127.0.0.1:8000/datos/Conteo_Vehiculos?`+
     `sel_estacion=${sel_estacion}`+
     `&sel_sentido=${sel_sentido}`+
     `&sel_categoria=${sel_categoria}`+

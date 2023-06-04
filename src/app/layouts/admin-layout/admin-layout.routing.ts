@@ -13,7 +13,6 @@ import { UpgradeComponent } from "../../pages/upgrade/upgrade.component";
 import { LoginComponent } from "app/pages/login/login.component";
 import { RegisterComponent } from "app/pages/register/register.component";
 import { AlertErrorComponent } from "app/page-private/alert-error/alert-error.component";
-import { MenuModelosComponent } from "app/page-private/menu-modelos/menu-modelos.component";// para proteger
 import { RecaudoVehiculosComponent } from "app/page-private/recaudo-vehiculos/recaudo-vehiculos.component";
 import { ConteoVehiculosComponent } from "app/page-private/conteo-vehiculos/conteo-vehiculos.component";
 import { Guardian1Guard } from "app/core/guardians/guardian1.guard";
@@ -31,7 +30,6 @@ export const AdminLayoutRoutes: Routes = [
   { path: "register", component: RegisterComponent },
   { path: "alert-error", component: AlertErrorComponent },
   { path: "user", component: UserComponent, canActivate: [Guardian1Guard] },
-  { path: "menu", component: MenuModelosComponent,  }, 
   { path: "recaudo_vehiculos", component: RecaudoVehiculosComponent},
   { path: "conteto_vehiculos", component: ConteoVehiculosComponent}
 ];

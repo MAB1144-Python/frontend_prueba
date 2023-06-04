@@ -53,7 +53,7 @@ export class ConteoVehiculosComponent implements OnInit {
     }
     let fecha_hora_ini = this.date_ini+"-"+this.hora_ini
     let fecha_hora_fin = this.date_fin+"-"+this.hora_fin
-    this.recaudovehiculos.peticion(this.sel_estacion,this.sel_sentido,this.sel_categoria,fecha_hora_ini,fecha_hora_fin).subscribe(
+    this.conteovehiculos.peticion(this.sel_estacion,this.sel_sentido,this.sel_categoria,fecha_hora_ini,fecha_hora_fin).subscribe(
 
       data =>{
         this.res_data = JSON.parse(JSON.stringify(data));
@@ -66,7 +66,7 @@ export class ConteoVehiculosComponent implements OnInit {
         this.date_fin =this.res_data['fecha_max'][0]+"-"+this.res_data['fecha_max'][1]+"-"+this.res_data['fecha_max'][2];
         this.hora_ini = this.res_data['fecha_min'][3];
         this.hora_fin = this.res_data['fecha_max'][3];
-
+        console.log(this.res_data)
         },
         (error) => {
           //this.logout()
