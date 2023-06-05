@@ -61,7 +61,7 @@ export class ConteoVehiculosComponent implements OnInit {
         this.uq_estaciones = this.res_data['UQ_estacion'];
         this.uq_sentido = this.res_data['UQ_sentido'];
         this.uq_categoria = this.res_data['UQ_categoria'];
-        this.filtro_registros = this.res_data['datos_Recaudo_Vehiculos'].length
+        this.filtro_registros = this.res_data['datos_conteo'].length
         this.date_ini = this.res_data['fecha_min'][0]+"-"+this.res_data['fecha_min'][1]+"-"+this.res_data['fecha_min'][2];
         this.date_fin =this.res_data['fecha_max'][0]+"-"+this.res_data['fecha_max'][1]+"-"+this.res_data['fecha_max'][2];
         this.hora_ini = this.res_data['fecha_min'][3];
@@ -94,10 +94,10 @@ export class ConteoVehiculosComponent implements OnInit {
         this.uq_estaciones = this.res_data['UQ_estacion'];
         this.uq_sentido = this.res_data['UQ_sentido'];
         this.uq_categoria = this.res_data['UQ_categoria'];
-        this.filtro_registros = this.res_data['datos_Recaudo_Vehiculos'].length
+        this.filtro_registros = this.res_data['datos_conteo'].length
         this.date_ini = this.res_data['fecha_min'][0]+"-"+this.res_data['fecha_min'][1]+"-"+this.res_data['fecha_min'][2];
         this.date_fin =this.res_data['fecha_max'][0]+"-"+this.res_data['fecha_max'][1]+"-"+this.res_data['fecha_max'][2];
-        console.log(this.res_data['datos_Recaudo_Vehiculos'])
+        console.log(this.res_data)
         },
         (error) => {
           //this.logout()

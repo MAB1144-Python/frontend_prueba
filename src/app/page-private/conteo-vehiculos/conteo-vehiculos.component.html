@@ -185,13 +185,13 @@
                           </tr>
                       </thead>
                       <tbody>
-                          <tr *ngFor="let dato of res_data.datos_Recaudo_Vehiculos ; let indice=index">
+                          <tr *ngFor="let dato of res_data.datos_conteo ; let indice=index">
                               <td>{{ indice }}</td>
                               <td>{{ dato.estacion }}</td>
                               <td>{{ dato.sentido }}</td>
                               <td>{{ dato.fecha_hora }}</td>
                               <td>{{ dato.categoria }}</td>
-                              <td>{{ dato.valor_tabulado }}</td>
+                              <td>{{ dato.cantidad }}</td>
                           </tr>
                       </tbody>
                   </table>

@@ -9,16 +9,13 @@ export class User_authenticated {
 
 export class user_data {
   constructor(
-    public id: string,
     public first_name: string,
     public last_name: string,
     public email: string,
     public username: string,
     public cellphone: string,
     public password: string,
-    public born_date: string,
-    public credits: any,
-    public authenticator: any
+    public born_date: string
 
 ) { }
 

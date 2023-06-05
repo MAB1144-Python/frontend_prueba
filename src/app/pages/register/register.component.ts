@@ -17,13 +17,7 @@ export class RegisterComponent implements OnInit {
   public email = "";
   public first_name = "";
   public last_name = "";
-  public home_address = "";
-  public city = "";
-  public country = "";
-  public postal_code = "";
   public born_date : any;
-  public newborn = '';
-  public gender = "";
   public password = "";
   public password1 = "";
   public password2 = "";

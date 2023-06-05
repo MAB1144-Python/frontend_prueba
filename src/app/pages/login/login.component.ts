@@ -78,39 +78,7 @@ public loginn() {
       this.cookieService.set('access_token', data.access_token, 0.09, '/');
       this.cookieService.set('refresh_token', data.refresh_token, 0.09, '/');
       setTimeout(() => {window.location.reload();},1000);
-      this.LoginService.get_user_by_token(this.token).subscribe(
-        data => {
-          const res = JSON.parse(JSON.stringify(data));
-          if(true){//res[0]['is_verified']
-          sessionStorage.setItem('first_name', res[0]['first_name']);
-          sessionStorage.setItem('last_name', res[0]['last_name']);
-          sessionStorage.setItem('email', res[0]['email']);
-          sessionStorage.setItem('cellphone', res[0]['cellphone']);
-          sessionStorage.setItem('id', res[0]['id']);
-          sessionStorage.setItem('born_date', res[0]['born_date']);
-          sessionStorage.setItem('credits',res[0]['credits']);
-          sessionStorage.setItem('authenticator',res[0]['is_verified']);
-          }else{
-          Swal.fire({
-            title: 'Do you want to save the changes?',
-            showDenyButton: true,
-            confirmButtonText: 'Save',
-            denyButtonText: `Don't save`,
-          }).then((result) => {
-            /* Read more about isConfirmed, isDenied below */
-            if (result.isConfirmed) {
-              Swal.fire('Saved!', '', 'success')
-            } else if (result.isDenied) {
-              Swal.fire('Changes are not saved', '', 'info')
-            }
-          })
-
-          }
-        }
-      );
-
-        this.router.navigateByUrl('/user')
-        this.LoginService.refreshToken(); 
+      this.router.navigateByUrl('/user')
     },
     (error) => {
       console.error(error);
