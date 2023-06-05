@@ -1,5 +1,5 @@
-# Proyecto Angular - README
-
+# Frontend-prueba tecnica
+## Mgs. Brayan Andru Montenegro Embus
 Este es un breve tutorial para ejecutar un proyecto Angular utilizando el comando `npm start`.
 
 ## Requisitos previos
