@@ -14,6 +14,7 @@ import { LoginServiService } from 'app/services/login-servi.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+  public res_data: any = '';
   public token = '';
   public username = '';
   public password = '';
@@ -63,6 +64,8 @@ public loginn() {
   this.LoginService.login_ser(this.username, this.password).subscribe(
     data => {
       this.message = '';
+      this.res_data = JSON.parse(JSON.stringify(data));
+      console.log("+++++++++++",this.res_data)
       sessionStorage.setItem("username", this.username);
       sessionStorage.setItem("token", data.access_token);
       this.token = data.access_token;

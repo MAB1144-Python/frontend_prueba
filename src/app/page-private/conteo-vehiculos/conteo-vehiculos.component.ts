@@ -38,12 +38,6 @@ export class ConteoVehiculosComponent implements OnInit {
   updatedata_cv(): void{
     if(true){
     let creditU = sessionStorage.getItem('credits');
-    Swal.fire({
-      position: 'center',
-      title: 'Usted tiene '+creditU +' creditos disponibles',
-      showConfirmButton: true,
-      timer: 5000
-    })
     //sel_estacion,sel_sentido,sel_categoria
     if (this.hora_ini == ''){
       this.hora_ini = '0'

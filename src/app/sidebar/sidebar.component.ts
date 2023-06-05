@@ -13,13 +13,10 @@ export interface RouteInfo {
 export const ROUTES: RouteInfo[] = [
     { path: '/login',         title: 'Login',             icon:'nc-circle-10', class: '' },
     { path: '/register',      title: 'Register',          icon:'nc-badge', class: '' },
-    { path: '/recaudo_vehiculos',   title: 'Recaudo',        icon:'nc-tile-56', class: '' },
-    { path: '/conteto_vehiculos',       title: 'Conteo',    icon:'nc-spaceship',  class: '' }//active-pro
 ];
 
 export const ROUTES_PRIVATE: RouteInfo[] = [
     { path: '/user',          title: 'User Profile',      icon:'nc-single-02',  class: '' },
-    { path: '/register',      title: 'Register',          icon:'nc-badge', class: '' },
     { path: '/recaudo_vehiculos',   title: 'Recaudo',        icon:'nc-tile-56', class: '' },
     { path: '/conteto_vehiculos',       title: 'Conteo',    icon:'nc-spaceship',  class: '' }//active-pro
 ];
@@ -56,14 +53,12 @@ export class SidebarComponent implements OnInit {
         this.cellphone = sessionStorage.getItem('cellphone');
         this.born_date = sessionStorage.getItem('born_date');
         this.authenticator = sessionStorage.getItem('authenticator');
-        this.menuItems = ROUTES_PRIVATE.filter(menuItem => menuItem);
-        /*if(this.username !== null && this.authenticator == "true" ){
+        
+        if(this.cookieService.get('access_token') != ""){
             this.menuItems = ROUTES_PRIVATE.filter(menuItem => menuItem);
-        } else if(this.username !== null && this.authenticator == "false" ){
-            this.menuItems = ROUTES_AUTHEC.filter(menuItem => menuItem);
         } else {
             this.menuItems = ROUTES.filter(menuItem => menuItem);
-        }*/
+        }
     }
 
     

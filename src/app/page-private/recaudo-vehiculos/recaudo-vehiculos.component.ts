@@ -38,13 +38,7 @@ export class RecaudoVehiculosComponent implements OnInit {
 
   updatedata_cv(): void{
     if(true){
-    let creditU = sessionStorage.getItem('credits');
-    Swal.fire({
-      position: 'center',
-      title: 'Usted tiene '+creditU +' creditos disponibles',
-      showConfirmButton: true,
-      timer: 5000
-    })
+
     //sel_estacion,sel_sentido,sel_categoria
     if (this.hora_ini == ''){
       this.hora_ini = '0'
@@ -58,6 +52,7 @@ export class RecaudoVehiculosComponent implements OnInit {
 
       data =>{
         this.res_data = JSON.parse(JSON.stringify(data));
+        
         this.total_registros = this.res_data['n_registros'];
         this.uq_estaciones = this.res_data['UQ_estacion'];
         this.uq_sentido = this.res_data['UQ_sentido'];

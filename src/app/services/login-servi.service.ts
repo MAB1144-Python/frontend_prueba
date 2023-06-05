@@ -25,21 +25,19 @@ export class LoginServiService {
     })}
 
     login_ser(username: string, password: string): Observable<User_authenticated> {
-      const formHeaders = new HttpHeaders();
-      formHeaders.append('accept', 'application/json');
-      formHeaders.append('Access-Control-Allow-Origin', '*');
-      formHeaders.append('Content-Type', 'application/x-www-form-urlencoded');
-  
-      const formParams = new HttpParams()
-        .set('userName', username)
-        .set('password', password)
-        /*.set('accept', 'application/json')
-        .set('Access-Control-Allow-Origin', '*')
-        .set('Content-Type', 'application/x-www-form-urlencoded');*/
 
+      const headers = {
+        headers: new HttpHeaders({
+          'accept': 'application/json',
+          //'Authorization': 'Bearer '+this.cookieService.get('access_token'),
+          'Access-Control-Allow-Origin': '*'
+        })
+      };
 
-      console.log("login",formParams)
-      return this.http.post<User_authenticated>(`http://23.102.103.53:5200/api/Login`, formParams);
+      return this.http.post<User_authenticated>(`http://127.0.0.1:8000/user/login?`+
+      `username=${username}`+
+      `&password=${password}`,
+      headers);
     }  
   
     register(username: string, first_name: string, last_name: string, email: string, cellphone: string, password: string, born_date: string): Observable<string> {
